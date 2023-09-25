@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 
 import { Drawer } from 'antd';
 
-import { AiOutlineMenu } from 'react-icons/ai'
+import { AiOutlineMenu, AiFillHome, AiFillProject } from 'react-icons/ai'
 
 const Header = () => {
   const router = useRouter()
@@ -13,20 +13,18 @@ const Header = () => {
     {
       slug: '/',
       title: 'Home',
+      icon: <AiFillHome size={30} />,
     },
     {
       slug: '/project',
       title: 'Project',
-    },
-    {
-      slug: '/skills',
-      title: 'Skills',
+      icon: <AiFillProject size={30} />
     },
   ]
 
   return (
     <>
-      <nav className='bg-blue-600 text-white static py-3 px-6 md:px-20'>
+      <nav className='bg-blue-600 text-white static py-3 px-6 md:px-16 lg:px-20'>
         <div className='flex justify-between items-center'>
           <div>logo</div>
           <div className='gap-4 hidden md:flex'>
@@ -53,7 +51,10 @@ const Header = () => {
                 }, 500);
               }}
             >
-              {item.title}
+              <div className='flex flex-row items-center gap-3 mb-4'>
+                {item.icon}
+                {item.title}
+              </div>
             </li>
           ))}
         </ul>

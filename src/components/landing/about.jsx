@@ -28,7 +28,7 @@ const AboutLanding = () => {
   ]
 
   return (
-    <div className='flex flex-col md:flex-row gap-6 md:gap-12'>
+    <div className='flex flex-col md:flex-row gap-6 md:gap-12 mb-5'>
       <div>
         <p className='text-xl md:text-2xl font-bold border-b-4 border-blue-600 w-fit mb-2'>
           About Me

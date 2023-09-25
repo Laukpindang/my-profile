@@ -24,7 +24,7 @@ const MainLayout = ({ children }) => {
           animate='visible'
           exit='hidden'
         >
-          <div className='py-3 px-6 mt-4 mb-8 md:px-20 mx-auto'>
+          <div className='py-3 px-6 mt-4 mb-8 md:px-16 lg:px-20 mx-auto'>
             {children}
           </div>
         </motion.div>

@@ -33,7 +33,7 @@ const AboutLanding = () => {
         <p className='text-xl md:text-2xl font-bold border-b-4 border-blue-600 w-fit mb-2'>
           About Me
         </p>
-        <p>
+        <p className='text-base'>
           I am a Frontend Developer with over 1 year of expertise in the IT industry, specializing React.js and Next.js. I have a strong commitment to crafting exceptional user experiences. I am eager to continually enhance my frontend skills to make a maximum contribution within the frontend team at your company.
         </p>
       </div>

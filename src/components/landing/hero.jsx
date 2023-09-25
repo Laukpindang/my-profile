@@ -5,8 +5,8 @@ import HeroImage from '@/assets/image/myimage.svg'
 
 const HeroLanding = () => {
   return (
-    <div className='flex flex-col-reverse md:flex-row gap-6 md:gap-12 mb-6 items-center'>
-      <div className='rounded-full overflow-hidden'>
+    <div className='flex flex-col-reverse md:flex-row gap-6 md:gap-12 mb-6 items-start md:items-center'>
+      <div className='rounded-full overflow-hidden mx-auto md:mx-0'>
         <Image src={HeroImage} alt='Ferdiansyah Gunawan' />
       </div>
       <div>

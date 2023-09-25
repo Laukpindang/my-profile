@@ -1,7 +1,9 @@
 import React from 'react';
-import Header from '@/components/global/header';
-import { motion, AnimatePresence } from 'framer-motion';
 import { useRouter } from 'next/router';
+
+import { motion, AnimatePresence } from 'framer-motion';
+import Header from '@/components/global/header';
+import Footer from '@/components/global/footer';
 
 const MainLayout = ({ children }) => {
   const router = useRouter()
@@ -14,19 +16,20 @@ const MainLayout = ({ children }) => {
   return (
     <>
       <Header />
-      <div className='py-3 px-6 md:px-20 mx-auto my-0'>
-        <AnimatePresence mode='wait'>
-          <motion.div
-            key={`main-body-${router.asPath}`}
-            variants={pageTransitionVariants}
-            initial='hidden'
-            animate='visible'
-            exit='hidden'
-          >
+      <AnimatePresence mode='wait'>
+        <motion.div
+          key={`main-body-${router.asPath}`}
+          variants={pageTransitionVariants}
+          initial='hidden'
+          animate='visible'
+          exit='hidden'
+        >
+          <div className='py-3 px-6 mt-4 mb-8 md:px-20 mx-auto'>
             {children}
-          </motion.div>
-        </AnimatePresence>
-      </div>
+          </div>
+        </motion.div>
+      </AnimatePresence>
+      <Footer />
     </>
   );
 }

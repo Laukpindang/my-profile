@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/router';
+import Image from 'next/image';
 
 import { Drawer } from 'antd';
 
 import { AiOutlineMenu, AiFillHome, AiFillProject } from 'react-icons/ai'
+import LogoImage from '../../assets/image/logo.svg'
 
 const Header = () => {
   const router = useRouter()
@@ -22,14 +24,22 @@ const Header = () => {
     },
   ]
 
+  console.log(router.pathname);
+
   return (
     <>
       <nav className='bg-blue-600 text-white static py-3 px-6 md:px-16 lg:px-20'>
         <div className='flex justify-between items-center'>
-          <div>logo</div>
-          <div className='gap-4 hidden md:flex'>
+          <div className='w-[140px] h-[45px] overflow-hidden cursor-pointer' onClick={() => router.push('/')}>
+            <Image src={LogoImage} alt='logo' width={140} height={45} />
+          </div>
+          <div className='gap-4 hidden md:flex items-center'>
             {menu.map((item) => (
-              <div key={item.slug} onClick={() => router.push(item.slug)} className='cursor-pointer'>
+              <div
+                key={item.slug}
+                onClick={() => router.push(item.slug)}
+                className={`cursor-pointer ${item.slug === router.pathname ? 'font-bold text-lg' : ''}`}
+              >
                 {item.title}
               </div>
             ))}

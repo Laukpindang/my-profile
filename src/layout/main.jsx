@@ -17,7 +17,7 @@ const MainLayout = ({ children }) => {
     <>
       <Header />
       <AnimatePresence mode='wait'>
-        <motion.div
+        <motion.main
           key={`main-body-${router.asPath}`}
           variants={pageTransitionVariants}
           initial='hidden'
@@ -27,7 +27,7 @@ const MainLayout = ({ children }) => {
           <div className='py-3 px-6 mt-4 mb-8 md:px-16 lg:px-20 mx-auto'>
             {children}
           </div>
-        </motion.div>
+        </motion.main>
       </AnimatePresence>
       <Footer />
     </>
